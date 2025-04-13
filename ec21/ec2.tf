@@ -7,7 +7,7 @@ resource "ec2_instance" "terraform" {
     Name = "terraform"
 }
 
-resource "aws_security_group" "allow.pavan" {
+resource "aws_security_group" "allow.pavan"{
     description = " allow all ports"
     engress {
         from_port = 0
@@ -27,6 +27,7 @@ resource "aws_security_group" "allow.pavan" {
 
  tags = {
     Name = "allow.pavan"
+ }
 }
 
 
