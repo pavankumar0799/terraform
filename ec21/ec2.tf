@@ -10,17 +10,17 @@ resource "aws_instance" "terraform" {
 
 resource "aws_security_group" "allow_pavan"{
     description = " allow all ports"
-    engress {
+    egress {
         from_port = 0
         to_port = 0
-        protocal = "-1"
+        protocol = "-1"
         cidr_blocks = ["0.0.0.0/0"]
         ipv6_cidr_blocks = ["::0/"]
     }
     ingress {
         from_port = 22
         to_port = 22
-        protocal = "tcp"
+        protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
         ipv6_cidr_blocks = ["::0/"]
     }
