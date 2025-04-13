@@ -3,8 +3,9 @@ resource "ec2_instance" "terraform" {
     instance_type = "t2.micro"
     vpc_security_group_ids = [aws_security_group.allow.pavan_id]
 
- tags = {
-    Name = "terraform"
+    tags = {
+       Name = "terraform"
+    }
 }
 
 resource "aws_security_group" "allow.pavan"{
@@ -25,9 +26,9 @@ resource "aws_security_group" "allow.pavan"{
     }
 
 
- tags = {
-    Name = "allow.pavan"
- }
+    tags = {
+        Name = "allow.pavan"
+    }
 }
 
 
