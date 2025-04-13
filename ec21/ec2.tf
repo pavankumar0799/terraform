@@ -1,13 +1,13 @@
-resource "ec2_instance" "terraform"{
+resource "ec2_instance" "terraform" {
     ami_id = " "
     instance_type = "t2.micro"
-    vpc_security_group_ids = [aws_security]
-}
-tags = {
+    vpc_security_group_ids = [aws_security_group.allow.pavan_id]
+
+ tags = {
     Name = "terraform"
 }
 
-resource "aws_security_group" "allow.pavan"{
+resource "aws_security_group" "allow.pavan" {
     description = " allow all ports"
     engress {
         from_port = 0
@@ -23,9 +23,9 @@ resource "aws_security_group" "allow.pavan"{
         cidr_blocks = ["0.0.0.0/0"]
         ipv6_cidr_blocks = ["::0/"]
     }
-}
 
-tags = {
+
+ tags = {
     Name = "allow.pavan"
 }
 
