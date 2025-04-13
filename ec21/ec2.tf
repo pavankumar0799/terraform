@@ -1,14 +1,14 @@
 resource "ec2_instance" "terraform" {
     ami_id = " "
     instance_type = "t2.micro"
-    vpc_security_group_ids = [aws_security_group.allow.pavan_id]
+    vpc_security_group_ids = [aws_security_group.allow_pavan_id]
 
     tags = {
        Name = "terraform"
     }
 }
 
-resource "aws_security_group" "allow.pavan"{
+resource "aws_security_group" "allow_pavan"{
     description = " allow all ports"
     engress {
         from_port = 0
